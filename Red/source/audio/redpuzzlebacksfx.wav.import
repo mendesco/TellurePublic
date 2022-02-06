@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/redpuzzlebacksfx.wav-84923a407b09c14efcd9cb64b8d02eab.sample"
+
+[deps]
+
+source_file="res://Red/source/audio/redpuzzlebacksfx.wav"
+dest_files=[ "res://.import/redpuzzlebacksfx.wav-84923a407b09c14efcd9cb64b8d02eab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

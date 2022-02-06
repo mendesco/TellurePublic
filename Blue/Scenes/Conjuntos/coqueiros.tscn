@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Blue/Scenes/Coqueiro2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Blue/Scenes/Coqueiro3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Blue/Scenes/Coqueiro1.tscn" type="PackedScene" id=3]
+
+[node name="conjuntoCoqueiros" type="Spatial"]
+
+[node name="A" type="Spatial" parent="."]
+
+[node name="CoqueiroA" type="Spatial" parent="A" instance=ExtResource( 3 )]
+transform = Transform( 1.1, 0, 0, 0, 2, 0, 0, 0, 1.1, 0, 0, 0 )
+
+[node name="CoqueiroA2" parent="A" instance=ExtResource( 3 )]
+transform = Transform( -1.30337e-07, 0, 0.7, 0, 1.2, 0, -0.8, 0, -1.14044e-07, 7.01478, 0, 9.77178 )
+
+[node name="CoqueiroA3" parent="A" instance=ExtResource( 3 )]
+transform = Transform( -3.25841e-07, 0, 2, 0, 2.3, 0, -2, 0, -3.25841e-07, -11.6331, 0, -11.2584 )
+
+[node name="B" type="Spatial" parent="."]
+
+[node name="CoqueiroB" type="Spatial" parent="B" instance=ExtResource( 1 )]
+transform = Transform( 1.19611, -0.136752, 0, 0.096531, 1.69449, 0, 0, 0, 1.2, -6.05078, -2.29051, 0 )
+
+[node name="CoqueiroB2" parent="B" instance=ExtResource( 1 )]
+transform = Transform( -3.25841e-07, 0, 2, 0, 2, 0, -2, 0, -3.25841e-07, -19.2558, -2.29051, 5.86406 )
+
+[node name="CoqueiroB3" parent="B" instance=ExtResource( 1 )]
+transform = Transform( -4.39886e-07, 0, 2.7, 0, 2.7, 0, -2.7, 0, -4.39886e-07, 11.4639, -2.29051, -17.6236 )
+
+[node name="C" type="Spatial" parent="."]
+
+[node name="CoqueiroC" type="Spatial" parent="C" instance=ExtResource( 2 )]
+transform = Transform( 1.08592, 0.239227, 0, -0.175433, 1.4808, 0, 0, 0, 1.1, 0, -1.34305, -6.13296 )
+
+[node name="CoqueiroC2" parent="C" instance=ExtResource( 2 )]
+transform = Transform( -1.6, 0, -5.21346e-07, 0, 1.3, 0, 5.21346e-07, 0, -1.6, 15.4078, 0, -3.61501 )
+
+[node name="CoqueiroC3" parent="C" instance=ExtResource( 2 )]
+transform = Transform( 1.3, 0, 0, 0, 0.8, 0, 0, 0, 1.3, 16.6441, 0, 8.12174 )

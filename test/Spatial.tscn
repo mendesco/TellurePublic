@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Domum/Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Green/source/balde.tscn" type="PackedScene" id=2]
+[ext_resource path="res://test/test.gd" type="Script" id=3]
+
+[sub_resource type="CubeMesh" id=5]
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 11, 9, 10 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.901961, 0.45098, 0.0156863, 1 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 17, 28, 10 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 41.0114, 0, 0, 0, 1, 0, 0, 0, 57.4553, 0, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+
+[node name="Collisions" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 3.49609, -2.2032, 2.03 )
+
+[node name="Baldes" type="Spatial" parent="Collisions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0 )
+
+[node name="MeshInstance" type="Spatial" parent="Collisions/Baldes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9349, 3, 16.318 )
+
+[node name="Area1" type="Area" parent="Collisions/Baldes/MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14734, 1, -0.0796661 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Baldes/MeshInstance/Area1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance2" type="Spatial" parent="Collisions/Baldes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.935155, 3, -38.682 )
+
+[node name="Area2" type="Area" parent="Collisions/Baldes/MeshInstance2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61293, 1, 0.636276 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Baldes/MeshInstance2/Area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance3" type="Spatial" parent="Collisions/Baldes" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0651, 3, -0.682093 )
+
+[node name="Area3" type="Area" parent="Collisions/Baldes/MeshInstance3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05896, 1, 0.416016 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Baldes/MeshInstance3/Area3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0 )
+shape = SubResource( 1 )
+
+[node name="Porta" type="Spatial" parent="Collisions"]
+
+[node name="MeshInstance" type="MeshInstance" parent="Collisions/Porta"]
+transform = Transform( 10.2, 0, 0, 0, -12.04, 0, 0, 0, 1, -2, 13, 44 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="AreaPorta" type="Area" parent="Collisions/Porta"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Collisions/Porta/AreaPorta"]
+transform = Transform( 1, 0, 0, 0, 0.672, 0, 0, 0, 1, -1, 18, 34 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="Collisions/Baldes/MeshInstance/Area1" to="." method="_on_Area1_body_entered"]
+[connection signal="body_exited" from="Collisions/Baldes/MeshInstance/Area1" to="." method="_on_Area1_body_exited"]
+[connection signal="body_entered" from="Collisions/Baldes/MeshInstance2/Area2" to="." method="_on_Area2_body_entered"]
+[connection signal="body_exited" from="Collisions/Baldes/MeshInstance2/Area2" to="." method="_on_Area2_body_exited"]
+[connection signal="body_entered" from="Collisions/Baldes/MeshInstance3/Area3" to="." method="_on_Area3_body_entered"]
+[connection signal="body_exited" from="Collisions/Baldes/MeshInstance3/Area3" to="." method="_on_Area3_body_exited"]
+[connection signal="body_entered" from="Collisions/Porta/AreaPorta" to="." method="_on_AreaPorta_body_entered"]
+[connection signal="body_exited" from="Collisions/Porta/AreaPorta" to="." method="_on_AreaPorta_body_exited"]

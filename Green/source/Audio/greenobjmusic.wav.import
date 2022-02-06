@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/greenobjmusic.wav-1a251e44f3380f231a1d8e50c7edb981.sample"
+
+[deps]
+
+source_file="res://Green/source/Audio/greenobjmusic.wav"
+dest_files=[ "res://.import/greenobjmusic.wav-1a251e44f3380f231a1d8e50c7edb981.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Red/source/PlacaPress.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Red/source/plat_move.png" type="Texture" id=2]
+[ext_resource path="res://Red/scripts/Area.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 5.4, 6.6, 11, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 10 ), Vector3( 0, 0, 8 ), Vector3( 0, 0, -35 ), Vector3( 0, 0, -30 ), Vector3( 0, 0, 8 ), Vector3( 0, 0, 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 5.4, 6.6, 11, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -107.707 ), Vector3( 0, 0, -105.07 ), Vector3( 0, 0, -72.7073 ), Vector3( 0, 0, -74 ), Vector3( 0, 0, -105.07 ), Vector3( 0, 0, -107.707 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1.35429, 0.263474, 1.38754 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1.47683, 3.15214, 1.25889 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1.37308, 0.315869, 1.36754 )
+
+[node name="BluePlatforms1" type="Spatial"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/active = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 8, 0, 0, 0, 10, 0, 0, 10 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 7 )
+
+[node name="KinematicBody" type="KinematicBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/KinematicBody"]
+shape = SubResource( 4 )
+
+[node name="Area" type="Area" parent="MeshInstance"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.68011, 0 )
+shape = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 8, 0, 0, 0, 10, 0, 0, -107.707 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 8 )
+
+[node name="KinematicBody" type="KinematicBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/KinematicBody"]
+shape = SubResource( 6 )
+
+[node name="Area2" type="Area" parent="MeshInstance2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.026598 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/Area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.07633, 0 )
+shape = SubResource( 5 )
+[connection signal="body_entered" from="MeshInstance/Area" to="MeshInstance/Area" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="MeshInstance/Area" to="MeshInstance/Area" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="MeshInstance2/Area2" to="MeshInstance2/Area2" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="MeshInstance2/Area2" to="MeshInstance2/Area2" method="_on_Area_body_exited"]

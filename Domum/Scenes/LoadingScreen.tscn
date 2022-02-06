@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://LoadingScreen.gd" type="Script" id=1]
+[ext_resource path="res://Menu/Sources/Images/spot_ico.png" type="Texture" id=2]
+[ext_resource path="res://Menu/Sources/Fonts/Rose Cake - Personal Use.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Domum/Sources/Image/CoroaLoadingCarregado.png" type="Texture" id=4]
+[ext_resource path="res://Domum/Sources/Image/CoroaLoadingNaoCarregado.png" type="Texture" id=5]
+[ext_resource path="res://Domum/Sources/Image/CoroaLoadingBorda.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 300
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 70
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="LoadingScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -418.921
+margin_right = 400.0
+margin_bottom = 181.079
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Carregando" type="Label" parent="."]
+margin_left = 618.227
+margin_top = 668.117
+margin_right = 1386.23
+margin_bottom = 858.117
+custom_fonts/font = SubResource( 1 )
+text = "CARREGANDO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TresPontos" type="Label" parent="."]
+margin_left = 1209.21
+margin_top = 559.847
+margin_right = 1399.21
+margin_bottom = 844.847
+custom_fonts/font = SubResource( 2 )
+text = "..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1842, 1004 )
+texture = ExtResource( 2 )
+
+[node name="VFP" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -274.0
+margin_top = -71.5
+margin_right = 274.0
+margin_bottom = 71.5
+custom_fonts/font = SubResource( 1 )
+text = "Você foi pego"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VFP2" type="Label" parent="."]
+visible = false
+margin_left = 728.911
+margin_top = 1012.85
+margin_right = 1371.91
+margin_bottom = 1155.85
+custom_fonts/font = SubResource( 3 )
+text = "Tente ser mais cauteloso"
+__meta__ = {
+"_edit_use_anchors_": false
+}

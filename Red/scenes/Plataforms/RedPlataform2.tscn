@@ -1,0 +1,306 @@
+[gd_scene load_steps=13 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.784314, 0.784314, 0.176471, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.784314, 0.784314, 0.176471, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.784314, 0.784314, 0.176471, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.784314, 0.784314, 0.176471, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.784314, 0.784314, 0.176471, 1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.784314, 0.784314, 0.176471, 1 )
+
+[sub_resource type="Animation" id=9]
+length = 16.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Plat 1:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.9, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, -8, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Plat 2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.9, 3.9, 4, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 13, 0, 0 ), Vector3( 13, 0, 0 ), Vector3( 13, 0, 0 ), Vector3( 13, -8, 0 ), Vector3( 13, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Plat 3:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.9, 4.9, 5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 26, 0, 0 ), Vector3( 26, 0, 0 ), Vector3( 26, 0, 0 ), Vector3( 26, -8, 0 ), Vector3( 26, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Plat 1:material/0:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.176471, 1 ), Color( 0.392157, 0.392157, 0.0862745, 1 ), Color( 0.784314, 0.784314, 0.176471, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Plat 2:material/0:albedo_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.176471, 1 ), Color( 0.392157, 0.392157, 0.0862745, 1 ), Color( 0.784314, 0.784314, 0.176471, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Plat 3:material/0:albedo_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.176471, 1 ), Color( 0.392157, 0.392157, 0.0862745, 1 ), Color( 0.784314, 0.784314, 0.176471, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Plat 1/StaticBody/CollisionShape:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Plat 2/StaticBody/CollisionShape:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 4, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Plat 3/StaticBody/CollisionShape:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Plat 4:translation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 6.9, 7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 41.8461, 0, -1.88963e-07 ), Vector3( 41.8461, 0, -1.88963e-07 ), Vector3( 41.846, -8, 0 ), Vector3( 41.846, 0, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Plat 5:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 7.9, 8, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 54.5549, 0, -3.40514e-07 ), Vector3( 54.5549, 0, -3.40514e-07 ), Vector3( 54.555, -8, 0 ), Vector3( 54.555, 0, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Plat 6:translation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 8.9, 9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 66.3596, 0, -4.81283e-07 ), Vector3( 66.3596, 0, -4.81283e-07 ), Vector3( 66.36, -8, 0 ), Vector3( 66.36, 0, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Plat 6:material/0:albedo_color")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.176471, 1 ), Color( 0.392157, 0.392157, 0.0862745, 1 ), Color( 0.784314, 0.784314, 0.176471, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Plat 4:material/0:albedo_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.176471, 1 ), Color( 0.392157, 0.392157, 0.0862745, 1 ), Color( 0.784314, 0.784314, 0.176471, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Plat 5:material/0:albedo_color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 8, 11, 17 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.784314, 0.784314, 0.176471, 1 ), Color( 0.392157, 0.392157, 0.0862745, 1 ), Color( 0.784314, 0.784314, 0.176471, 1 ), Color( 0.784314, 0.784314, 0.176471, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("RedWall:translation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 3, 5, 6, 9, 11, 13.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 33.7345, 33.6176, -4.02279e-07 ), Vector3( 33.7345, 1.38604, -4.02279e-07 ), Vector3( 33.7345, -14.0371, -4.02279e-07 ), Vector3( 33.7345, 33.6176, -4.02279e-07 ), Vector3( 33.7345, 1.38604, -4.02279e-07 ), Vector3( 33.7345, -14.0371, -4.02279e-07 ), Vector3( 33.7345, 1.38604, -4.02279e-07 ) ]
+}
+
+[sub_resource type="CubeMesh" id=10]
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.901961, 0.0823529, 0.0823529, 1 )
+
+[sub_resource type="BoxShape" id=12]
+
+[node name="RedPlataform1" type="Spatial"]
+
+[node name="YellowPlataforms" type="Spatial" parent="."]
+transform = Transform( 1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, 0, 33.7345 )
+
+[node name="Plat 1" type="MeshInstance" parent="YellowPlataforms"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="YellowPlataforms/Plat 1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowPlataforms/Plat 1/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Plat 2" type="MeshInstance" parent="YellowPlataforms"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 13, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="YellowPlataforms/Plat 2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowPlataforms/Plat 2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Plat 3" type="MeshInstance" parent="YellowPlataforms"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 26, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="YellowPlataforms/Plat 3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowPlataforms/Plat 3/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Plat 4" type="MeshInstance" parent="YellowPlataforms"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 41.8461, 0, -1.88963e-07 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="YellowPlataforms/Plat 4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowPlataforms/Plat 4/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Plat 5" type="MeshInstance" parent="YellowPlataforms"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 54.5549, 0, -3.40514e-07 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="YellowPlataforms/Plat 5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowPlataforms/Plat 5/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Plat 6" type="MeshInstance" parent="YellowPlataforms"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 66.3596, 0, -4.81283e-07 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 8 )
+
+[node name="StaticBody" type="StaticBody" parent="YellowPlataforms/Plat 6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowPlataforms/Plat 6/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YellowPlataforms"]
+autoplay = "Fall"
+anims/Fall = SubResource( 9 )
+
+[node name="RedWall" type="MeshInstance" parent="YellowPlataforms"]
+transform = Transform( 5.96244e-08, -1, 8.14603e-07, 0, -1.62921e-07, -5, 5, 1.19249e-08, -9.71405e-15, 33.7345, 33.6176, -4.02279e-07 )
+mesh = SubResource( 10 )
+material/0 = SubResource( 11 )
+
+[node name="KinematicBody" type="KinematicBody" parent="YellowPlataforms/RedWall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="YellowPlataforms/RedWall/KinematicBody"]
+shape = SubResource( 12 )

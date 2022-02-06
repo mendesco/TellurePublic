@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/redpuzzle.wav-846851adf955e727595f7c0cba4cefe0.sample"
+
+[deps]
+
+source_file="res://Red/source/audio/redpuzzle.wav"
+dest_files=[ "res://.import/redpuzzle.wav-846851adf955e727595f7c0cba4cefe0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

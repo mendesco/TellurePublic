@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dialoguend_sfx.wav-39b2677d4a83e21e2c8d41f8b16672f3.sample"
+
+[deps]
+
+source_file="res://Domum/Sources/Audios/dialoguend_sfx.wav"
+dest_files=[ "res://.import/dialoguend_sfx.wav-39b2677d4a83e21e2c8d41f8b16672f3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/greenbackefx.wav-656cd16eaf63e4099c6304b7e0f09638.sample"
+
+[deps]
+
+source_file="res://Green/source/Audio/greenbackefx.wav"
+dest_files=[ "res://.import/greenbackefx.wav-656cd16eaf63e4099c6304b7e0f09638.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

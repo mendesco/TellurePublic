@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Green/Script/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Green/Scenes/monster_particles.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CapsuleMesh" id=2]
+material = SubResource( 1 )
+mid_height = 6.0
+
+[sub_resource type="CapsuleShape" id=3]
+height = 6.0
+
+[sub_resource type="SphereShape" id=4]
+radius = 76.0
+
+[sub_resource type="SphereShape" id=5]
+radius = 23.0
+
+[node name="Enemy" type="KinematicBody" groups=[
+"Enemy",
+]]
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 2, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 2, 0 )
+shape = SubResource( 3 )
+
+[node name="BodyParticles" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+
+[node name="AreaAlert" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="AreaAlert"]
+shape = SubResource( 4 )
+
+[node name="AreaChase" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="AreaChase"]
+shape = SubResource( 5 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="AreaAlert" to="." method="_on_AreaAlert_body_entered"]
+[connection signal="body_exited" from="AreaAlert" to="." method="_on_AreaAlert_body_exited"]
+[connection signal="body_entered" from="AreaChase" to="." method="_on_AreaChase_body_entered"]
+[connection signal="body_exited" from="AreaChase" to="." method="_on_AreaChase_body_exited"]

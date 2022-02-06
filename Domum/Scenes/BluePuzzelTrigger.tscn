@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Domum/Scripts/BluePuzzelTrigger.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.21794, 0.217604, 0.227143 )
+
+[node name="BluePuzzelTrigger" type="Area"]
+transform = Transform( -84.991, 0, 0, 0, 60, 0, 0, 0, 60, 1151.76, -536.928, -319.541 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 5 )
+[connection signal="body_entered" from="." to="." method="_on_BluePuzzelTrigger_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_BluePuzzelTrigger_body_exited"]

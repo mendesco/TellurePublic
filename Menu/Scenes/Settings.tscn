@@ -1,0 +1,185 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Menu/Scripts/Settings.gd" type="Script" id=1]
+[ext_resource path="res://Menu/Themes/rose_cake.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Menu/Themes/settings_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Menu/Sources/Fonts/Rose Cake - Personal Use.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Menu/Sources/Audio/button_sfx.wav" type="AudioStream" id=5]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 0.905882, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 1, 0.905882, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="List" type="VBoxContainer" parent="."]
+anchor_right = 1.004
+anchor_bottom = 1.0
+margin_left = 680.0
+margin_top = 328.0
+margin_right = -693.68
+margin_bottom = -423.0
+custom_constants/separation = 14
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterLabel" type="Label" parent="List"]
+margin_top = 46.0
+margin_right = 554.0
+margin_bottom = 76.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Volume Geral"
+align = 1
+
+[node name="MasterVolume" type="HSlider" parent="List"]
+margin_top = 90.0
+margin_right = 554.0
+margin_bottom = 106.0
+theme = SubResource( 1 )
+value = 1.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="List"]
+margin_top = 120.0
+margin_right = 554.0
+margin_bottom = 150.0
+custom_fonts/font = ExtResource( 2 )
+text = "Música"
+align = 1
+
+[node name="MusicVolume" type="HSlider" parent="List"]
+margin_top = 164.0
+margin_right = 554.0
+margin_bottom = 180.0
+value = 1.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EffectsLabel" type="Label" parent="List"]
+margin_top = 194.0
+margin_right = 554.0
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 2 )
+text = "Efeitos Sonoros"
+align = 1
+
+[node name="Effects" type="HBoxContainer" parent="List"]
+margin_top = 238.0
+margin_right = 554.0
+margin_bottom = 283.0
+alignment = 1
+
+[node name="EffectsVolume" type="HSlider" parent="List/Effects"]
+margin_right = 485.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 485, 40 )
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Test" type="Button" parent="List/Effects"]
+margin_left = 489.0
+margin_right = 554.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 65, 45 )
+custom_fonts/font = ExtResource( 2 )
+text = "Testar"
+
+[node name="Apply" type="Button" parent="."]
+margin_left = 864.0
+margin_top = 704.0
+margin_right = 1056.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 0, 60 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "Aplicar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -40.0
+bus = "SFX"
+
+[node name="lblTest2" type="Label" parent="."]
+margin_left = 848.0
+margin_top = 626.0
+margin_right = 954.0
+margin_bottom = 670.0
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Resolução:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dropdown_Resolução" type="OptionButton" parent="."]
+margin_left = 953.0
+margin_top = 624.0
+margin_right = 1081.0
+margin_bottom = 673.0
+text = "Selecione"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="List/MasterVolume" to="." method="_on_MasterVolume_value_changed"]
+[connection signal="value_changed" from="List/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
+[connection signal="value_changed" from="List/Effects/EffectsVolume" to="." method="_on_EffectsVolume_value_changed"]
+[connection signal="pressed" from="List/Effects/Test" to="." method="_on_Test_pressed"]
+[connection signal="pressed" from="Apply" to="." method="_on_Apply_pressed"]
+[connection signal="item_selected" from="dropdown_Resolução" to="." method="_on_dropdown_Resoluo_item_selected"]

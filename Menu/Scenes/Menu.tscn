@@ -1,0 +1,1002 @@
+[gd_scene load_steps=64 format=2]
+
+[ext_resource path="res://Menu/Sources/Videos/menu_VideoBackground.webm" type="VideoStream" id=1]
+[ext_resource path="res://Menu/Sources/Videos/credits.webm" type="VideoStream" id=2]
+[ext_resource path="res://Menu/Scripts/background_Video.gd" type="Script" id=3]
+[ext_resource path="res://Menu/Scripts/menu.gd" type="Script" id=4]
+[ext_resource path="res://Menu/Sources/Audio/menu.wav" type="AudioStream" id=5]
+[ext_resource path="res://Menu/Sources/Images/Spot.png" type="Texture" id=6]
+[ext_resource path="res://Menu/Sources/Images/LogoETEC.jpg" type="Texture" id=7]
+[ext_resource path="res://Menu/Sources/Images/LogoCPS.jpg" type="Texture" id=8]
+[ext_resource path="res://Menu/Scripts/background_Music.gd" type="Script" id=9]
+[ext_resource path="res://Menu/Scenes/newgame_Button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Menu/Scenes/opcoes_Button.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Menu/Scenes/sair_Button.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Menu/Sources/Videos/intro_Cutscene.webm" type="VideoStream" id=13]
+[ext_resource path="res://Menu/Sources/Fonts/Rose Cake - Personal Use.otf" type="DynamicFontData" id=14]
+[ext_resource path="res://Menu/Themes/unselected_button.tres" type="StyleBox" id=15]
+[ext_resource path="res://Menu/Themes/selected_button.tres" type="StyleBox" id=16]
+[ext_resource path="res://Menu/Sources/Images/iinsta.png" type="Texture" id=17]
+[ext_resource path="res://Menu/Sources/Images/iinsta2.png" type="Texture" id=18]
+[ext_resource path="res://Menu/Sources/Images/spot_ico.png" type="Texture" id=19]
+[ext_resource path="res://Menu/Scripts/back_Button.gd" type="Script" id=21]
+[ext_resource path="res://Menu/Scenes/Settings.tscn" type="PackedScene" id=28]
+
+[sub_resource type="Animation" id=1]
+resource_name = "quit"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/Botões:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("quit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu/Sair:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform float speed = 1.0;
+uniform float dis = 10.0;
+
+void vertex(){
+ VERTEX.x += sin(TIME * speed) * dis * (UV.y-1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/speed = 1.0
+shader_param/dis = 10.0
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform float height = 5.0;
+uniform float frequency = 50.0;
+uniform float speed = 3.0;
+
+void vertex() {
+ VERTEX.y += height * sin((frequency * UV.x) + (speed * TIME));
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/height = 5.0
+shader_param/frequency = 50.0
+shader_param/speed = 3.0
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.2, 0.2, 0.2, 0 )
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.403922, 0.403922, 0.403922, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 0.905882, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.980392, 0.811765, 0.811765, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color( 0, 0, 0, 0 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 0.905882, 0, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StreamTexture" id=15]
+
+[sub_resource type="StyleBoxLine" id=16]
+color = Color( 1, 1, 1, 1 )
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id=17]
+color = Color( 1, 0.905882, 0, 1 )
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id=18]
+color = Color( 0.345098, 0.313726, 0.0156863, 1 )
+thickness = 8
+
+[sub_resource type="DynamicFontData" id=19]
+font_path = "res://theme/Lato-Semibold.ttf"
+
+[sub_resource type="DynamicFont" id=20]
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 19 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.905882, 0, 1 )
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 10
+shadow_size = 3
+shadow_offset = Vector2( 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="DynamicFont" id=23]
+size = 200
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="Theme" id=24]
+default_font = SubResource( 23 )
+Button/styles/disabled = SubResource( 9 )
+Button/styles/hover = SubResource( 10 )
+Button/styles/normal = SubResource( 11 )
+Button/styles/pressed = SubResource( 12 )
+CheckBox/styles/normal = SubResource( 13 )
+CheckButton/styles/hover = SubResource( 14 )
+CheckButton/styles/normal = SubResource( 14 )
+CheckButton/styles/pressed = SubResource( 14 )
+HSlider/icons/grabber = SubResource( 15 )
+HSlider/icons/grabber_highlight = SubResource( 15 )
+HSlider/styles/grabber_area = SubResource( 16 )
+HSlider/styles/grabber_area_highlight = SubResource( 17 )
+HSlider/styles/slider = SubResource( 18 )
+LineEdit/fonts/normal = SubResource( 20 )
+LineEdit/styles/normal = SubResource( 21 )
+TextEdit/styles/read_only = SubResource( 22 )
+
+[sub_resource type="Animation" id=25]
+length = 80.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2, 2.1, 2.7, 20, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 104 ), Vector2( 960, 104 ), Vector2( 912, 104 ), Vector2( 160, 104 ), Vector2( 912, 104 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect2:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 2.1, 2.7, 20, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 3 ), Vector2( 0, 3 ), Vector2( 50, 3 ), Vector2( 800, 3 ), Vector2( 50, 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect3:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2, 2.1, 2.7, 20, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 104 ), Vector2( 960, 104 ), Vector2( 960, 104 ), Vector2( 960, 104 ), Vector2( 960, 104 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect3:rect_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2, 2.1, 2.7, 20, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 3 ), Vector2( 0, 3 ), Vector2( 50, 3 ), Vector2( 800, 3 ), Vector2( 50, 3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.905882, 0, 0 ), Color( 1, 0.905882, 0, 0 ), Color( 1, 0.937255, 0.345098, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ColorRect3:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.905882, 0, 0 ), Color( 1, 0.905882, 0, 0 ), Color( 1, 0.937255, 0.345098, 1 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=27]
+size = 48
+outline_size = 1
+outline_color = Color( 1, 0.937255, 0.345098, 1 )
+extra_spacing_char = 3
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 48
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=29]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=31]
+size = 48
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=32]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=34]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 1, 0.909804, 0, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="DynamicFont" id=35]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 35
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=37]
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Logo Workers:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LogoCPS:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 8.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LogoETEC:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 11.5, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect2:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 13, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "fade_back"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=40]
+size = 80
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 90
+outline_size = 1
+outline_color = Color( 1, 0.894118, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=42]
+size = 90
+outline_size = 2
+outline_color = Color( 1, 0.894118, 0, 1 )
+font_data = ExtResource( 14 )
+
+[node name="Menu" type="Control"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/quit = SubResource( 1 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0
+autoplay = true
+bus = "Music"
+script = ExtResource( 9 )
+
+[node name="Tween" type="Tween" parent="Music"]
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="VideoPlayer" type="VideoPlayer" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Botões" type="Control" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu/Botões"]
+anims/fade = SubResource( 2 )
+anims/fadeout = SubResource( 3 )
+
+[node name="Novo Jogo" parent="Menu/Botões" instance=ExtResource( 10 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 832.0
+margin_top = 640.0
+margin_right = 1097.0
+margin_bottom = 704.0
+focus_neighbour_bottom = NodePath("../Opções")
+caminho = "res://Domum/Scenes/Domum.tscn"
+
+[node name="Opções" parent="Menu/Botões" instance=ExtResource( 11 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 832.0
+margin_top = 704.0
+margin_right = 1096.0
+margin_bottom = 768.0
+focus_neighbour_top = NodePath("../Novo Jogo")
+focus_neighbour_bottom = NodePath("../Sair")
+
+[node name="Sair" parent="Menu/Botões" instance=ExtResource( 12 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 832.0
+margin_top = 768.0
+margin_right = 1097.0
+margin_bottom = 832.0
+focus_neighbour_top = NodePath("../Opções")
+focus_neighbour_bottom = NodePath("../Créditos")
+
+[node name="Créditos" type="Button" parent="Menu/Botões"]
+margin_left = 128.0
+margin_top = 960.0
+margin_right = 384.0
+margin_bottom = 1024.0
+focus_neighbour_top = NodePath("../Sair")
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = SubResource( 4 )
+text = "Créditos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="insta" type="TextureButton" parent="Menu/Botões"]
+margin_left = 1760.0
+margin_top = 928.0
+margin_right = 1860.0
+margin_bottom = 1028.0
+texture_normal = ExtResource( 17 )
+texture_hover = ExtResource( 18 )
+texture_focused = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spot" type="Sprite" parent="Menu/Botões"]
+material = SubResource( 6 )
+position = Vector2( 1632, 968 )
+texture = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="Menu/Botões"]
+material = SubResource( 8 )
+margin_left = 640.0
+margin_top = 160.0
+margin_right = 1289.0
+margin_bottom = 350.0
+theme = SubResource( 24 )
+text = "(TELLURE)"
+
+[node name="MenuOpções" type="Control" parent="Menu"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu/MenuOpções"]
+anims/fade = SubResource( 25 )
+anims/out = SubResource( 26 )
+
+[node name="FundoPreto" type="ColorRect" parent="Menu/MenuOpções"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 0.509804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/MenuOpções"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+custom_fonts/font = SubResource( 27 )
+text = "
+Opções"
+align = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Menu/MenuOpções"]
+margin_left = 960.0
+margin_top = 104.0
+margin_right = 960.0
+margin_bottom = 107.0
+color = Color( 1, 0.905882, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Menu/MenuOpções"]
+margin_left = 960.0
+margin_top = 104.0
+margin_right = 960.0
+margin_bottom = 107.0
+color = Color( 1, 0.905882, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" parent="Menu/MenuOpções" instance=ExtResource( 28 )]
+visible = false
+
+[node name="back_Button" type="Button" parent="Menu/MenuOpções"]
+margin_left = 128.0
+margin_top = 960.0
+margin_right = 384.0
+margin_bottom = 1024.0
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = SubResource( 28 )
+text = "Voltar"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Créditos" type="Control" parent="Menu"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu/Créditos"]
+"anims/fade in" = SubResource( 29 )
+"anims/fade out" = SubResource( 30 )
+
+[node name="VideoCreditos" type="VideoPlayer" parent="Menu/Créditos"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+stream = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarCreditos" type="Button" parent="Menu/Créditos"]
+margin_left = 1536.0
+margin_top = 960.0
+margin_right = 1792.0
+margin_bottom = 1024.0
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = SubResource( 31 )
+text = "Voltar"
+
+[node name="Sair" type="Control" parent="Menu"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu/Sair"]
+"anims/fade in" = SubResource( 32 )
+"anims/fade out" = SubResource( 33 )
+
+[node name="ColorRect1" type="ColorRect" parent="Menu/Sair"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 0.509804 )
+
+[node name="ColorRect2" type="ColorRect" parent="Menu/Sair"]
+anchor_right = 0.021
+anchor_bottom = 0.037
+margin_left = 771.0
+margin_top = 451.0
+margin_right = 1109.68
+margin_bottom = 557.04
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="borda" type="Label" parent="Menu/Sair"]
+margin_left = 768.0
+margin_top = 448.0
+margin_right = 1152.0
+margin_bottom = 600.0
+custom_styles/normal = SubResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="msg" type="Label" parent="Menu/Sair"]
+margin_left = 808.0
+margin_top = 464.0
+margin_right = 1118.0
+margin_bottom = 528.0
+custom_fonts/font = SubResource( 35 )
+text = "Tem certeza que deseja sair?"
+align = 1
+valign = 1
+
+[node name="sim" type="Button" parent="Menu/Sair"]
+margin_left = 832.0
+margin_top = 528.0
+margin_right = 928.0
+margin_bottom = 576.0
+focus_neighbour_left = NodePath("../não")
+focus_neighbour_top = NodePath("../não")
+focus_neighbour_right = NodePath("../não")
+focus_neighbour_bottom = NodePath("../não")
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = SubResource( 36 )
+text = "sim"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="não" type="Button" parent="Menu/Sair"]
+margin_left = 992.0
+margin_top = 528.0
+margin_right = 1088.0
+margin_bottom = 576.0
+focus_neighbour_left = NodePath("../sim")
+focus_neighbour_top = NodePath("../sim")
+focus_neighbour_right = NodePath("../sim")
+focus_neighbour_bottom = NodePath("../sim")
+custom_styles/hover = ExtResource( 16 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = SubResource( 36 )
+text = "não"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opening" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="Opening"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoETEC" type="Sprite" parent="Opening"]
+position = Vector2( 968, 544 )
+texture = ExtResource( 7 )
+
+[node name="LogoCPS" type="Sprite" parent="Opening"]
+position = Vector2( 960, 536 )
+texture = ExtResource( 8 )
+
+[node name="Logo Workers" type="Sprite" parent="Opening"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="Opening"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Opening"]
+anims/fade_out = SubResource( 37 )
+
+[node name="quit" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Intro_Transition" type="Node2D" parent="."]
+
+[node name="VideoIntroPlayer" type="VideoPlayer" parent="Intro_Transition"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+stream = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pular" type="Control" parent="Intro_Transition"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPular" type="AnimationPlayer" parent="Intro_Transition/Pular"]
+anims/fade = SubResource( 38 )
+anims/fade_back = SubResource( 39 )
+
+[node name="pular" type="RichTextLabel" parent="Intro_Transition/Pular"]
+margin_left = 1653.0
+margin_top = 925.0
+margin_right = 1917.0
+margin_bottom = 1015.0
+custom_fonts/normal_font = SubResource( 40 )
+text = "pular"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P" type="RichTextLabel" parent="Intro_Transition/Pular"]
+margin_left = 1590.0
+margin_top = 922.0
+margin_right = 1854.0
+margin_bottom = 986.0
+custom_fonts/normal_font = SubResource( 41 )
+text = "P"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="<>" type="RichTextLabel" parent="Intro_Transition/Pular"]
+margin_left = 1567.0
+margin_top = 921.0
+margin_right = 1831.0
+margin_bottom = 985.0
+custom_fonts/normal_font = SubResource( 42 )
+text = "( )"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Intro_Transition/Pular"]
+wait_time = 3.0
+one_shot = true
+[connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
+[connection signal="finished" from="Menu/VideoPlayer" to="Menu/VideoPlayer" method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="Menu/Botões/Novo Jogo" to="." method="_on_Novo_Jogo_pressed"]
+[connection signal="pressed" from="Menu/Botões/Opções" to="." method="_on_Opes_pressed"]
+[connection signal="pressed" from="Menu/Botões/Sair" to="." method="_on_Sair_pressed"]
+[connection signal="pressed" from="Menu/Botões/Créditos" to="." method="_on_Crditos_pressed"]
+[connection signal="pressed" from="Menu/Botões/insta" to="." method="_on_insta_pressed"]
+[connection signal="pressed" from="Menu/MenuOpções/back_Button" to="." method="_on_back_Button_pressed"]
+[connection signal="pressed" from="Menu/Créditos/VoltarCreditos" to="." method="_on_VoltarCreditos_pressed"]
+[connection signal="pressed" from="Menu/Sair/sim" to="." method="_on_sim_pressed"]
+[connection signal="pressed" from="Menu/Sair/não" to="." method="_on_no_pressed"]
+[connection signal="finished" from="Intro_Transition/VideoIntroPlayer" to="." method="_on_VideoIntroPlayer_finished"]
+[connection signal="animation_finished" from="Intro_Transition/Pular/AnimationPular" to="." method="_on_AnimationPular_animation_finished"]
+[connection signal="timeout" from="Intro_Transition/Pular/Timer" to="." method="_on_Timer_timeout"]

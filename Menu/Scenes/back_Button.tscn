@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Menu/Sources/Fonts/Rose Cake - Personal Use.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Menu/Themes/selected_button.tres" type="StyleBox" id=2]
+[ext_resource path="res://Menu/Themes/unselected_button.tres" type="StyleBox" id=3]
+[ext_resource path="res://Menu/Sources/Audio/button_sfx.wav" type="AudioStream" id=4]
+[ext_resource path="res://Menu/Scripts/back_Button.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 1
+outline_color = Color( 1, 0.937255, 0.345098, 1 )
+font_data = ExtResource( 1 )
+
+[node name="back_Button" type="Button"]
+margin_right = 265.0
+margin_bottom = 64.0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
+text = "Voltar"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -40.0
+[connection signal="focus_entered" from="." to="." method="_on_back_Button_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_back_Button_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_back_Button_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_back_Button_mouse_exited"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/binSFX02.wav-a75f18574621c0fe4bb2eaaf987ceec6.sample"
+
+[deps]
+
+source_file="res://Blue/source/audio/binSFX02.wav"
+dest_files=[ "res://.import/binSFX02.wav-a75f18574621c0fe4bb2eaaf987ceec6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shovelC.wav-80433a1e9332e12ab02f9bf3ab130386.sample"
+
+[deps]
+
+source_file="res://Blue/source/audio/shovelC.wav"
+dest_files=[ "res://.import/shovelC.wav-80433a1e9332e12ab02f9bf3ab130386.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

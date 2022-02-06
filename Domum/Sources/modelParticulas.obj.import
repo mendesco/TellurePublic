@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/modelParticulas.obj-fb251bb61ebd608a02b637e0142a389b.mesh"
+
+[deps]
+
+files=[ "res://.import/modelParticulas.obj-fb251bb61ebd608a02b637e0142a389b.mesh" ]
+
+source_file="res://Domum/Sources/modelParticulas.obj"
+dest_files=[ "res://.import/modelParticulas.obj-fb251bb61ebd608a02b637e0142a389b.mesh", "res://.import/modelParticulas.obj-fb251bb61ebd608a02b637e0142a389b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

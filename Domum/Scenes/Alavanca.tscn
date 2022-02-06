@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+mid_height = 4.0
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 3.04724, 1.10574 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 10.2441, 5.64491, 16.413 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Active"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -50, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Unactive"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -50, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="Alavanca" type="StaticBody"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Active = SubResource( 4 )
+anims/Unactive = SubResource( 5 )

@@ -1,0 +1,181 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Red/source/paredao.png" type="Texture" id=1]
+[ext_resource path="res://Red/source/chao.png" type="Texture" id=2]
+[ext_resource path="res://Red/scenes/Tocha.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 4, 1, 4 )
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 4, 6, 6 )
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 1, 0.894118, 0, 1 )
+
+[sub_resource type="CubeMesh" id=11]
+material = SubResource( 10 )
+
+[node name="mainchãodouble" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 625.741, 4.41916, -194.848 )
+
+[node name="floor" type="MeshInstance" parent="."]
+transform = Transform( -3.25841e-06, 0, 20, 0, 1, 0, -20, 0, -3.25841e-06, -16.3861, 7.70242, 33.5479 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="floor2" type="MeshInstance" parent="."]
+transform = Transform( -3.25841e-06, 0, 20, 0, 1, 0, -20, 0, -3.25841e-06, -16.3861, 7.70242, 73.5479 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="floor3" type="MeshInstance" parent="."]
+transform = Transform( -6.51683e-06, 0, 20, 0, 1, 0, -40, 0, -3.25841e-06, -16.3861, 9.70242, 53.5479 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="floor3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="floor3/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Paredão5" type="MeshInstance" parent="."]
+transform = Transform( -3.25841e-06, 0, 1, 0, 40, 0, -20, 0, -1.62921e-07, -35.8023, -32.0545, 33.6738 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Paredão5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Paredão5/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="Paredão9" type="MeshInstance" parent="."]
+transform = Transform( -3.25841e-06, 0, 1, 0, 40, 0, -20, 0, -1.62921e-07, -35.8023, -32.0545, 73.6738 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Paredão9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Paredão9/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="Paredão8" type="MeshInstance" parent="."]
+transform = Transform( -3.25841e-06, 0, 1, 0, 40, 0, -20, 0, -1.62921e-07, 3.19775, -32.0545, 33.6738 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Paredão8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Paredão8/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="Paredão10" type="MeshInstance" parent="."]
+transform = Transform( -3.25841e-06, 0, 1, 0, 40, 0, -20, 0, -1.62921e-07, 3.19775, -32.0545, 73.6738 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Paredão10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Paredão10/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="Paredão6" type="MeshInstance" parent="."]
+transform = Transform( 20, 0, 0, 0, 40, 0, 0, 0, 1, -15.8023, -32.0545, 14.6738 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Paredão6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Paredão6/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="Paredão7" type="MeshInstance" parent="."]
+transform = Transform( 20, 0, 0, 0, 40, 0, 0, 0, 1, -15.8023, -32.0545, 92.6738 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Paredão7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Paredão7/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="borda" type="Spatial" parent="."]
+
+[node name="2" type="MeshInstance" parent="borda"]
+transform = Transform( 0.5, 0, 0, 0, 0.14, 0, 0, 0, 40, -36.3467, 7.89145, 53.5354 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="9" type="MeshInstance" parent="borda"]
+transform = Transform( 0.5, 0, 0, 0, 0.14, 0, 0, 0, 40, 3.82422, 7.89145, 53.5354 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="3" type="MeshInstance" parent="borda"]
+transform = Transform( -8.14603e-08, 0, 20.534, 0, 0.14, 0, -0.5, 0, -3.34541e-06, -16.3291, 7.89145, 13.4477 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="4" type="MeshInstance" parent="borda"]
+transform = Transform( -8.14603e-08, 0, 20.534, 0, 0.14, 0, -0.5, 0, -3.34541e-06, -16.3291, 7.89145, 93.1584 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="5" type="MeshInstance" parent="borda"]
+transform = Transform( 0.5, 0, 0, 0, -1.49094e-07, -37.5826, 0, 0.5, -3.34541e-06, -36.3185, -29.7569, 93.2337 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="6" type="MeshInstance" parent="borda"]
+transform = Transform( 0.5, 0, 0, 0, -1.49094e-07, -37.5826, 0, 0.5, -3.34541e-06, -36.319, -29.757, 13.447 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="7" type="MeshInstance" parent="borda"]
+transform = Transform( 0.5, 0, 0, 0, -1.49094e-07, -37.5826, 0, 0.5, -3.34541e-06, 3.74104, -29.757, 13.447 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="8" type="MeshInstance" parent="borda"]
+transform = Transform( 0.5, 0, 0, 0, -1.49094e-07, -37.5826, 0, 0.5, -3.34541e-06, 3.74103, -29.757, 93.3333 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="assets" type="Spatial" parent="."]
+
+[node name="Tocha" parent="assets" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, -16.5643, -4.35436, 12.1201 )
+
+[node name="Tocha2" parent="assets" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5643, -4.35436, 94.8794 )
+
+[node name="Tocha3" parent="assets" instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 5.10767, -4.35436, 53.5637 )
+
+[node name="Tocha4" parent="assets" instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -38.0572, -4.35436, 53.5637 )

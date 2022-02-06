@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/binpick.wav-d99ea205cfefc83e6359329b371ed36d.sample"
+
+[deps]
+
+source_file="res://Blue/source/audio/binpick.wav"
+dest_files=[ "res://.import/binpick.wav-d99ea205cfefc83e6359329b371ed36d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

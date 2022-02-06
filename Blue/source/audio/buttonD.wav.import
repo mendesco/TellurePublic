@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/buttonD.wav-c24038670ba03102d49e12b7f9d83722.sample"
+
+[deps]
+
+source_file="res://Blue/source/audio/buttonD.wav"
+dest_files=[ "res://.import/buttonD.wav-c24038670ba03102d49e12b7f9d83722.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://addons/scatter/src/core/scatter.gd" type="Script" id=1]
+[ext_resource path="res://addons/scatter/src/core/scatter_item.gd" type="Script" id=2]
+[ext_resource path="res://addons/scatter/src/core/scatter_exclude_point.gd" type="Script" id=3]
+[ext_resource path="res://addons/scatter/demos/assets/grass/data/m_grass_52.tres" type="Material" id=4]
+[ext_resource path="res://Green/Script/Bush.gd" type="Script" id=5]
+
+[sub_resource type="Curve3D" id=232]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -494.16, 3.23564, -30.2537, 0, 0, 0, 0, 0, 0, -494.831, 0.624714, -30.6221, 0, 0, 0, 0, 0, 0, -497.973, -0.262465, -30.0644, 0, 0, 0, 0, 0, 0, -496.073, 3.62897, -29.0455 ),
+"tilts": PoolRealArray( 0, 0, 0, 0 )
+}
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "Plane"
+surfaces/0 = {
+"aabb": AABB( -0.287418, -0.0355886, -0.250463, 0.689469, 0.569355, 0.541144 ),
+"array_data": PoolByteArray( 145, 37, 191, 61, 193, 28, 255, 62, 174, 60, 128, 190, 230, 52, 112, 0, 124, 11, 24, 127, 85, 57, 0, 0, 136, 37, 191, 61, 250, 208, 23, 188, 211, 11, 98, 188, 230, 52, 112, 0, 124, 11, 24, 127, 85, 57, 0, 60, 40, 92, 143, 62, 73, 232, 214, 60, 2, 81, 127, 61, 204, 48, 104, 0, 115, 22, 47, 127, 0, 60, 0, 60, 40, 92, 143, 62, 230, 164, 8, 63, 97, 132, 50, 190, 204, 48, 104, 0, 115, 22, 47, 127, 0, 60, 0, 0, 40, 92, 143, 190, 73, 232, 214, 60, 2, 81, 127, 61, 52, 48, 104, 0, 115, 234, 209, 127, 0, 0, 0, 60, 145, 37, 191, 189, 250, 208, 23, 188, 211, 11, 98, 188, 26, 52, 112, 0, 124, 245, 232, 127, 85, 53, 0, 60, 136, 37, 191, 189, 193, 28, 255, 62, 174, 60, 128, 190, 26, 52, 112, 0, 124, 245, 232, 127, 85, 53, 0, 0, 40, 92, 143, 190, 230, 164, 8, 63, 97, 132, 50, 190, 52, 48, 104, 0, 115, 234, 209, 127, 0, 0, 0, 0, 148, 190, 124, 190, 222, 182, 6, 63, 152, 218, 177, 61, 102, 51, 202, 0, 193, 10, 147, 127, 74, 57, 0, 0, 154, 65, 169, 60, 178, 129, 185, 35, 98, 121, 183, 61, 97, 49, 192, 0, 184, 6, 153, 127, 62, 53, 0, 60, 23, 77, 229, 189, 224, 5, 184, 163, 65, 203, 73, 189, 86, 43, 174, 0, 169, 0, 165, 127, 93, 57, 0, 60, 252, 68, 136, 190, 51, 250, 205, 62, 15, 80, 170, 58, 86, 43, 174, 0, 169, 0, 165, 127, 93, 58, 137, 51, 84, 92, 236, 189, 92, 36, 166, 62, 40, 212, 148, 62, 112, 57, 241, 0, 228, 22, 135, 127, 141, 51, 248, 52, 88, 15, 156, 189, 25, 138, 216, 59, 31, 190, 48, 188, 190, 88, 62, 0, 71, 237, 103, 127, 93, 57, 0, 60, 120, 154, 148, 187, 57, 110, 81, 188, 223, 2, 191, 61, 190, 88, 62, 0, 71, 237, 103, 127, 144, 58, 0, 60, 226, 23, 169, 62, 8, 123, 139, 62, 252, 195, 61, 61, 190, 88, 62, 0, 71, 237, 103, 127, 143, 59, 244, 55, 168, 217, 205, 62, 127, 169, 229, 62, 166, 222, 1, 190, 190, 88, 62, 0, 71, 237, 103, 127, 93, 58, 137, 51, 70, 199, 45, 62, 11, 9, 209, 62, 255, 190, 51, 62, 240, 43, 138, 0, 140, 39, 30, 127, 74, 57, 0, 0, 0, 108, 12, 62, 99, 197, 17, 189, 95, 17, 144, 60, 228, 43, 141, 0, 142, 35, 41, 127, 62, 53, 0, 60, 129, 192, 204, 59, 235, 239, 144, 56, 122, 160, 183, 61, 208, 42, 147, 0, 148, 29, 59, 127, 93, 57, 0, 60, 87, 118, 165, 61, 28, 217, 166, 62, 12, 120, 59, 62, 208, 42, 147, 0, 148, 29, 59, 127, 93, 58, 137, 51, 94, 41, 162, 62, 134, 246, 83, 62, 67, 67, 11, 62, 23, 40, 138, 0, 139, 47, 249, 127, 141, 51, 248, 52, 192, 172, 234, 61, 89, 241, 33, 62, 0, 203, 112, 62, 21, 75, 156, 0, 132, 1, 231, 127, 93, 44, 28, 57, 104, 46, 163, 61, 126, 97, 131, 187, 75, 27, 217, 61, 21, 75, 156, 0, 132, 1, 231, 127, 120, 49, 0, 60, 34, 25, 212, 187, 42, 211, 56, 187, 76, 147, 181, 61, 21, 75, 156, 0, 132, 1, 231, 127, 62, 53, 0, 60, 49, 128, 92, 187, 241, 3, 204, 61, 211, 55, 42, 62, 21, 75, 156, 0, 132, 1, 231, 127, 194, 52, 46, 58, 17, 46, 152, 189, 77, 174, 210, 60, 80, 65, 127, 189, 225, 211, 142, 0, 137, 238, 39, 127, 93, 57, 0, 60, 84, 150, 28, 190, 208, 222, 89, 60, 182, 93, 19, 189, 225, 211, 142, 0, 137, 238, 39, 127, 144, 58, 0, 60, 108, 40, 147, 190, 214, 127, 134, 62, 52, 211, 200, 189, 225, 211, 142, 0, 137, 238, 39, 127, 143, 59, 244, 55, 119, 238, 122, 190, 212, 9, 210, 62, 7, 12, 44, 190, 225, 211, 142, 0, 137, 238, 39, 127, 93, 58, 137, 51 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0, 4, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 6, 0, 1, 0, 5, 0, 6, 0, 0, 0, 1, 0, 8, 0, 10, 0, 9, 0, 8, 0, 11, 0, 10, 0, 9, 0, 12, 0, 8, 0, 13, 0, 15, 0, 14, 0, 16, 0, 15, 0, 13, 0, 17, 0, 19, 0, 18, 0, 17, 0, 20, 0, 19, 0, 18, 0, 21, 0, 17, 0, 22, 0, 24, 0, 23, 0, 22, 0, 25, 0, 24, 0, 26, 0, 28, 0, 27, 0, 29, 0, 28, 0, 26, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 54,
+"material": ExtResource( 4 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 30
+}
+
+[sub_resource type="MultiMesh" id=228]
+transform_format = 1
+instance_count = 29
+visible_instance_count = 29
+mesh = SubResource( 1 )
+transform_array = PoolVector3Array( -2.46307, 0, -11.7677, 0, 18.0341, 0, 23.5354, 0, -4.92614, -497.659, 3.62897, -29.2993, -14.7913, 0, 3.42875, 0, 22.7753, 0, -6.8575, 0, -29.5827, -498.449, 3.62897, -30.6842, 12.4046, 0, -7.81261, 0, 21.9898, 0, 15.6252, 0, 24.8093, -497.039, 3.62897, -29.1827, 8.2306, 0, -7.00108, 0, 16.2082, 0, 14.0022, 0, 16.4612, -495.274, 3.62897, -28.5716, 13.8264, 0, 12.0092, 0, 27.4704, 0, -24.0183, 0, 27.6528, -495.293, 3.62897, -27.6753, -5.16656, 0, 12.1222, 0, 19.766, 0, -24.2444, 0, -10.3331, -494.669, 3.62897, -29.3344, 13.1861, 0, 7.58515, 0, 22.8181, 0, -15.1703, 0, 26.3722, -496.035, 3.62897, -28.5914, -11.0254, 0, 5.67661, 0, 18.6015, 0, -11.3532, 0, -22.0509, -494.418, 3.62897, -30.4091, 5.92179, 0, -9.90773, 0, 17.3138, 0, 19.8155, 0, 11.8436, -497.257, 3.62897, -30.3682, -1.61051, 0, 18.9044, 0, 28.4594, 0, -37.8089, 0, -3.22103, -493.374, 3.62897, -31.1978, 10.0039, 0, -12.9686, 0, 24.5681, 0, 25.9373, 0, 20.0078, -496.434, 3.62897, -30.4739, -0.359513, 0, 11.8942, 0, 17.8494, 0, -23.7884, 0, -0.719026, -497.342, 3.62897, -30.9892, -1.6514, 0, -11.0231, 0, 16.7191, 0, 22.0462, 0, -3.3028, -496.931, 3.62897, -30.7566, 18.6663, 0, 0.977998, 0, 28.0378, 0, -1.956, 0, 37.3325, -498.782, 3.62897, -30.2017, 0.470447, 0, -12.1258, 0, 18.2023, 0, 24.2515, 0, 0.940894, -495.029, 3.62897, -31.3151, 5.6703, 0, 12.1789, 0, 20.1513, 0, -24.3578, 0, 11.3406, -496.439, 3.62897, -31.2126, -3.97199, 0, 13.5778, 0, 21.2203, 0, -27.1556, 0, -7.94398, -494.248, 3.62897, -31.26, 7.45994, 0, 10.3006, 0, 19.0773, 0, -20.6011, 0, 14.9199, -494.031, 3.62897, -30.9132, 9.94129, 0, -13.1446, 0, 24.7209, 0, 26.2892, 0, 19.8826, -494.825, 3.62897, -28.9942, 9.3506, 0, -7.15721, 0, 17.6631, 0, 14.3144, 0, 18.7012, -498.351, 3.62897, -30.4928, 17.3863, 0, 5.25433, 0, 27.2443, 0, -10.5087, 0, 34.7726, -495.79, 3.62897, -31.6431, -13.8815, 0, 7.07597, 0, 23.3714, 0, -14.1519, 0, -27.7631, -494.514, 3.62897, -30.2855, -18.0402, 0, -0.162482, 0, 27.0614, 0, 0.324963, 0, -36.0804, -495.015, 3.62897, -31.8706, -8.35749, 0, -8.85607, 0, 18.2654, 0, 17.7121, 0, -16.715, -497.765, 3.62897, -29.3856, -1.52834, 0, 18.8574, 0, 28.3788, 0, -37.7148, 0, -3.05667, -498.299, 3.62897, -28.084, -0.515631, 0, 18.4666, 0, 27.7108, 0, -36.9333, 0, -1.03126, -496.729, 3.62897, -29.0683, -0.837794, 0, -19.9776, 0, 29.9928, 0, 39.9552, 0, -1.67559, -492.832, 3.62897, -32.0667, -11.2032, 0, -15.541, 0, 28.7372, 0, 31.082, 0, -22.4064, -496.634, 3.62897, -29.9902, -1.82054, 0, -19.4159, 0, 29.2516, 0, 38.8318, 0, -3.64107, -493.583, 3.62897, -29.7585 )
+
+[sub_resource type="BoxShape" id=230]
+extents = Vector3( 4.91023, 13.228, 8.38149 )
+
+[sub_resource type="CubeMesh" id=231]
+
+[node name="Bush" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="Scatter" type="Path" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 497.187, 0, 30.011 )
+curve = SubResource( 232 )
+script = ExtResource( 1 )
+bake_interval = 1.0
+global_seed = 0
+use_instancing = true
+disable_updates_in_game = false
+force_update_when_loaded = true
+modifier_stack = Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/core/modifier_stack.gd" ),"stack":[ Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/distribute_inside_random.gd" ),"enabled":true,"display_name":"Distribute Inside (Random)","category":"Distribute","warning":"","warning_ignore_no_transforms":true,"warning_ignore_no_path":false,"override_global_seed":false,"custom_seed":0,"instance_count":50,"_rng":Object(RandomNumberGenerator,"seed":-6517189392850099471,"script":null)
+)
+, Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/randomize_transforms.gd" ),"enabled":true,"display_name":"Randomize Transforms","category":"Edit","warning":"","warning_ignore_no_transforms":false,"warning_ignore_no_path":true,"override_global_seed":false,"custom_seed":0,"local_space":true,"position":Vector3( 1, 0, 1 ),"rotation":Vector3( 0, 360, 0 ),"scale":Vector3( 1, 1, 1 ),"_rng":Object(RandomNumberGenerator,"seed":8467516051146619451,"script":null)
+)
+, Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/offset_scale.gd" ),"enabled":true,"display_name":"Offset Scale","category":"Offset","warning":"","warning_ignore_no_transforms":false,"warning_ignore_no_path":true,"local_space":false,"scale":Vector3( 10, 15, 20 ))
+, Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/modifiers/exclude_around_point.gd" ),"enabled":true,"display_name":"Remove Around Point","category":"Remove","warning":"","warning_ignore_no_transforms":false,"warning_ignore_no_path":true,"Scatter":Object(Node,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"script":Resource( "res://addons/scatter/src/core/namespace.gd" ),"_root":"res://addons/scatter","ScatterPath":Resource( "res://addons/scatter/src/core/scatter_path.gd" ),"Scatter":ExtResource( 1 ),"ScatterItem":ExtResource( 2 ),"Transforms":Resource( "res://addons/scatter/src/core/transforms.gd" ),"ModifierStack":Resource( "res://addons/scatter/src/core/modifier_stack.gd" ),"UpdateGroup":Resource( "res://addons/scatter/src/core/update_group.gd" ),"Point":ExtResource( 3 ),"Util":Resource( "res://addons/scatter/src/common/util.gd" ))
+,"node_name":"ScatterPoint","radius":1.0,"points":[ Object(Spatial,"_import_path":NodePath(""),"pause_mode":0,"process_priority":0,"transform":Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -495.606, 6.32548, -29.7385 ),"visible":true,"script":ExtResource( 3 ),"radius":1.0)
+ ],"bounds_min":Vector3( -496.606, 6.32548, -30.7385 ),"bounds_max":Vector3( -494.606, 6.32548, -28.7385 ),"t":Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 497.187, 0, 30.011 ),"falloff":"{\"points\":[{\"lm\":0,\"lt\":0,\"x\":0,\"y\":0,\"rm\":0,\"rt\":0},{\"lm\":0,\"lt\":0,\"x\":1,\"y\":0,\"rm\":0,\"rt\":0}],\"parameters\":{\"min\":0,\"max\":1,\"res\":100}}","ignore_height":true,"override_global_seed":false,"custom_seed":0,"_rng":Object(RandomNumberGenerator,"seed":-3501118895998588239,"script":null)
+)
+ ],"just_created":false,"undo_redo":Object(UndoRedo,"script":null)
+)
+
+
+[node name="ScatterItem" type="Spatial" parent="Scatter"]
+script = ExtResource( 2 )
+proportion = 100
+local_item_path = NodePath("")
+item_path = "res://addons/scatter/demos/assets/grass/grass52.tscn"
+scale_modifier = 1.0
+ignore_initial_position = true
+ignore_initial_rotation = true
+ignore_initial_scale = true
+materials = [ ExtResource( 4 ) ]
+
+[node name="MultiMeshInstance" type="MultiMeshInstance" parent="Scatter/ScatterItem"]
+multimesh = SubResource( 228 )
+
+[node name="ScatterPoint" type="Spatial" parent="Scatter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -495.606, 6.32548, -29.7385 )
+script = ExtResource( 3 )
+radius = 1.0
+
+[node name="Area" type="Area" parent="Scatter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.161, 15.168, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scatter/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -493.448, 0, -30.407 )
+shape = SubResource( 230 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 231 )
+material/0 = null
+[connection signal="body_entered" from="Scatter/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Scatter/Area" to="." method="_on_Area_body_exited"]
